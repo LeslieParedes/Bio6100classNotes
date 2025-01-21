@@ -1,0 +1,97 @@
+---
+title: "document1"
+output:
+  pdf_document: default
+  html_document: 
+    theme: cosmo
+date: "2025-01-21"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Just type as always.Example for Markdown.
+
+Second paragraph.
+
+Leslie Paredes  
+Department of Biology  
+University of Vermont  
+
+# First header (largest)
+
+Back to plaint text here 
+ 
+## Second level
+
+### Thrid level
+
+use asterisks for *italic* and double asterisks for **boldface** text. Use caret for ^superscript^ and ~subscript~ and two tildas for ~~strikethroughh~~
+
+>use to geater than sign for indented quotesd material
+Looks nice!
+
+## For lists
+
+- first item
+- second item
+  + indented list item
+
+links [linked phrase](website address)
+
+First Header | Second Header
+------------ | -------------
+Content cell | Content cell
+Content cell | Content cell
+
+### Fencing options
+
+Using a single tick for ´in line fencing´ of material.
+
+Use triple back ticks for a fenced block of text.
+
+```
+everything here is plain text
+even with markdown
+
+properly spaced
+```
+Use r in an in-line text:
+
+the value of pi is `r pi +10`
+
+## Use chunks for r code
+
+```{r, eval=TRUE,echo=TRUE}
+# r code can be used here!
+print(runif(10))
+plot(runif(10),runif(10))
+
+```
+### Using LaTex for math
+
+Use a single dollar sign $a = b + c$ to insert mathematical statements within sentences of plain text.
+
+In contrast, use a double dollar sign: 
+
+$$a = b +c$$
+to center and offset equations.
+
+$$H_0 = Z_{a + b}$$
+$$S = cA^z$$
+$$S=cA^z_1 + z_{2 + x}$$
+$$\alpha = \frac{\beta}{\delta + \gamma_x}$$
+$$z = \sum_{i=1}^X{K}$$
+$$\backslash$$
+$$\backslash \alpha \le b \backslash$$
+$$P(Occurrence of Species A) = Z$$
+$$P(\mbox{Occurrence of Species A}) = Z$$
+```{r, echo=TRUE, eval=TRUE}
+#here is a new chunk of code, distant from the first one 
+
+z<-1:10
+print(z)
+#end of the second chunk
+```
+
