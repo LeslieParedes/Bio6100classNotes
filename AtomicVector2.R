@@ -93,3 +93,57 @@ z[tester]
 which(z<3) #positions of the elements not the values
 z[which(z<3)] #shows the values
 z[-(length(z):(length(z)-2))] #is a formula to select the elements
+
+#also can subset using named vector elements
+names(z)<-letters[1:5]
+print(z)
+z[c("b","c")]
+
+
+#Operators
+
+# < less than
+# > greater than
+# <= less than o equal to
+# >= greater than or equal to
+# == equal to
+
+# ! not
+# & and (vector)
+# | or (vector)
+# xor(x,y)
+
+x<- 1:5
+y<-c(1:3,7,7)
+
+x == 2
+x != 2
+x == 1 & y == 7
+x == 1|y == 7
+x == 3 | y == 3
+xor(x == 3, y == 3)
+
+#common errors with logicals
+# = versus ==
+
+z2<-5
+z2==4|6 #gives wrong answer
+z2==4| z2==6
+
+# Suscripting with missing values
+z<-runif(10)
+print(z)
+
+set.seed(90) # simple integer sequence
+z<-runif(10)
+print(z)
+
+z<0.5 # create logical vector
+z[z<0.5] #ture or false
+which(z<0.5) # use to get indices for logical (locations)
+z[which(z<0.5)] #does the same
+
+zD<-c(z,NA,NA) #concatenating
+print(zD)
+zD[zD<0.5] #NA values carried along
+zD[which(zD<0.5)] #NA values dropped
