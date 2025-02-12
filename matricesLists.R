@@ -63,3 +63,23 @@ var_c<-runif(12)
 d_frame<-data.frame(var_a,var_b,var_c) #each variable have the same length
 print(d_frame)
 str(d_frame) #
+
+#cide for reading in a data frame from a .cvs
+
+my_data<-read.table(file = "TemData.csv",
+                    header = TRUE,
+                    sep = ",",
+                    comment.char = "#")
+#inspect object
+str(my_data)
+#now add a column
+my_data$newVar<-runif(4) #adding uniform numbers
+head(my_data)
+
+write.table(x=my_data,
+            file = "sampleOutputfile.csv",
+            sep=",")
+# saveRDS
+saveRDS(my_data,file = "my_data.RDS") #save objects
+restroed_my_data<-readRDS("my_data.RDS")
+
