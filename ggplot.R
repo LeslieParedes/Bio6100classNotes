@@ -3,6 +3,8 @@
 library(ggplot2)
 library(patchwork)
 install.packages("ggthemes")
+install.packages("extrafont")
+library(extrafont)
 library(ggthemes)
 # p1<-ggplot(data = DATA) +
 #   aes(MAPPINGS)+
@@ -43,3 +45,32 @@ p1+theme_void() #only data without labels and axes
 p1+theme_solarized()
 p1+theme_economist()
 p1+theme_gray()#default theme
+
+p1+theme_classic(base_size = 30,base_family = "serif") # base_family is the font
+#defaults:theme_grey,base_size=16, base_family="Helvetica")
+
+font_import()#import the all the system fonts (runs once)
+y
+
+fonts()
+p1+theme_classic(base_size = 35,base_family = "Georgia")#doesn't work in my R
+
+
+
+p1 <- ggplot(data = d_frame)+
+  aes(x=x,y=y)+
+  geom_point(size=4,
+             shape=21,
+             color= "black",fill="cyan")+
+  theme_bw()
+
+print(p1)
+p1 <- ggplot(data = d_frame)+
+  aes(x=x,y=y)+
+  geom_point(size=4,
+             shape=21,
+             color= "black",fill="cyan")+
+  xlim(4,7)+
+  ylim(-10,40)+
+  theme_bw(base_size = 25,base_family = "Monaco")
+print(p1)
